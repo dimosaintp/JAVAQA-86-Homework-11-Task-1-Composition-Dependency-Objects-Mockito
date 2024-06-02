@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MovieManager.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JAVAQA-86-Homework-Task-9-OOP-Cinema</a> &gt; <a href="index.source.html" class="el_package">ru.netology.repository</a> &gt; <span class="el_source">MovieManager.java</span></div><h1>MovieManager.java</h1><pre class="source lang-java linenums">package ru.netology.repository;
+
+public class MovieManager {
+
+    /* Менеджер выполняет следующие операции:
+
+ 1. Добавление нового фильма.
+ 2. Вывод всех фильмов в порядке добавления.
+ 3. Вывод (максимальный лимит) последних добавленных фильмов в обратном от добавления порядке.
+ 4. По умолчанию выводится последние 5 добавленных фильма.
+ 5. При создании менеджера можно указать другой лимит.
+ 6. У менеджера 2 конструктора:
+ — без параметров (выставляет лимит менеджера в 5);
+ — с параметром (берёт значение лимита для менеджера из параметра конструктора). */
+
+    // Конструкторы менеджера.
+    private int limit; // Лимит добавленных фильмов.
+
+<span class="fc" id="L19">    public MovieManager() {</span>
+<span class="fc" id="L20">        this.limit = 5;</span>
+<span class="fc" id="L21">    }</span>
+
+<span class="fc" id="L23">    public MovieManager(int limit) {</span>
+<span class="fc" id="L24">        this.limit = limit;</span>
+<span class="fc" id="L25">    }</span>
+
+    // Поле для хранения набора фильмов.
+<span class="fc" id="L28">    private String[] movies = new String[0];</span>
+
+    // Метод добавления фильма.
+    // Создаём массив tmp с длиной movies.length + 1.
+    // Копируем массив movies в tmp.
+    // Добавляем новый фильм movie в массив tmp.
+    // Записываем массив movies в новый массив tmp.
+
+    public void AddNewMovie(String movie) {
+<span class="fc" id="L37">        String[] tmp = new String[movies.length + 1];</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        for (int i = 0; i &lt; movies.length; i++) {</span>
+<span class="fc" id="L39">            tmp[i] = movies[i];</span>
+        }
+<span class="fc" id="L41">        tmp[tmp.length - 1] = movie;</span>
+<span class="fc" id="L42">        movies = tmp;</span>
+<span class="fc" id="L43">    }</span>
+
+    // Метод показа всех фильмов.
+    public String[] ShowAllMovies() {
+<span class="fc" id="L47">        return movies; // Возвращаем массив movies со всеми фильмами.</span>
+    }
+
+    // Метод показа последних добавленных фильмов.
+
+    public String[] ShowTheLastAddedMovie() {
+        int arrayLength; // Длина массива с лимитом.
+
+        // Если фильмов добавлено меньше лимита, длина массива равна количеству фильмов.
+        // Иначе длина массива равна установленному лимиту — 5.
+
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (movies.length &lt; limit) {</span>
+<span class="fc" id="L59">            arrayLength = movies.length;</span>
+        } else {
+<span class="fc" id="L61">            arrayLength = limit;</span>
+        }
+<span class="fc" id="L63">        String [] tmp = new String[arrayLength]; // Массив ответа с лимитом.</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        for (int i = 0; i &lt; tmp.length; i++) {</span>
+<span class="fc" id="L65">            tmp[i] = movies[movies.length - 1 - i]; // Заполняем массив tmp последними добавленными фильмами.</span>
+        }
+<span class="fc" id="L67">        return tmp;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
