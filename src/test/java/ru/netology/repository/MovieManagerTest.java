@@ -10,83 +10,83 @@ public class MovieManagerTest {
     public void shouldAddNullMovies() {
 
         String[] expected = {};
-        String[] actual = manager.ShowAllMovies();
+        String[] actual = manager.showAllMovies();
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test // Добавление 1 нового фильма.
     public void shouldAddOneMovie() {
-        manager.AddNewMovie("Бладшот");
+        manager.addNewMovie("Бладшот");
 
         String[] expected = {"Бладшот"};
-        String[] actual = manager.ShowAllMovies();
+        String[] actual = manager.showAllMovies();
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test // Добавление нескольких новых фильмов.
     public void shouldAddSeveralMovies() {
 
-        manager.AddNewMovie("Вперёд");
-        manager.AddNewMovie("Отель Белград");
-        manager.AddNewMovie("Джентльмены");
-        manager.AddNewMovie("Человек невидимка");
-        manager.AddNewMovie("Тролли. Мировой тур");
+        manager.addNewMovie("Вперёд");
+        manager.addNewMovie("Отель Белград");
+        manager.addNewMovie("Джентльмены");
+        manager.addNewMovie("Человек невидимка");
+        manager.addNewMovie("Тролли. Мировой тур");
 
         String[] expected = {"Вперёд", "Отель Белград", "Джентльмены", "Человек невидимка", "Тролли. Мировой тур"};
-        String[] actual = manager.ShowAllMovies();
+        String[] actual = manager.showAllMovies();
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test // Показ последних добавленных фильмов, если добавлено больше лимита.
-    public void shouldShowTheLastAddMoviesIfAddedMoreThanLimit() {
-        manager.AddNewMovie("Вперёд");
-        manager.AddNewMovie("Отель Белград");
-        manager.AddNewMovie("Джентльмены");
-        manager.AddNewMovie("Человек невидимка");
-        manager.AddNewMovie("Тролли. Мировой тур");
-        manager.AddNewMovie("Номер один");
+    public void shouldShowLastAddMoviesAddedMoreLimit() {
+        manager.addNewMovie("Вперёд");
+        manager.addNewMovie("Отель Белград");
+        manager.addNewMovie("Джентльмены");
+        manager.addNewMovie("Человек невидимка");
+        manager.addNewMovie("Тролли. Мировой тур");
+        manager.addNewMovie("Номер один");
 
-        String [] expected = {"Номер один", "Тролли. Мировой тур", "Человек невидимка", "Джентльмены", "Отель Белград"};
-        String[] actual = manager.ShowTheLastAddedMovie();
+        String[] expected = {"Номер один", "Тролли. Мировой тур", "Человек невидимка", "Джентльмены", "Отель Белград"};
+        String[] actual = manager.showLastAddedMovies();
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test // Показ последних добавленных фильмов, если добавлено меньше лимита.
-    public void shouldShowTheLastAddMoviesIfAddedLessThanLimit() {
+    public void shouldShowLastAddMoviesAddedLessLimit() {
 
-        manager.AddNewMovie("Человек невидимка");
+        manager.addNewMovie("Человек невидимка");
 
-        String [] expected = {"Человек невидимка"};
-        String[] actual = manager.ShowTheLastAddedMovie();
+        String[] expected = {"Человек невидимка"};
+        String[] actual = manager.showLastAddedMovies();
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test // Показ последних добавленных фильмов, если добавлено равное лимиту.
-    public void shouldShowTheLastAddMoviesIfAddedEqualToTheLimit() {
+    public void shouldShowLastAddMoviesAddedEqualLimit() {
 
-        manager.AddNewMovie("Вперёд");
-        manager.AddNewMovie("Отель Белград");
-        manager.AddNewMovie("Джентльмены");
-        manager.AddNewMovie("Человек невидимка");
-        manager.AddNewMovie("Тролли. Мировой тур");
+        manager.addNewMovie("Вперёд");
+        manager.addNewMovie("Отель Белград");
+        manager.addNewMovie("Джентльмены");
+        manager.addNewMovie("Человек невидимка");
+        manager.addNewMovie("Тролли. Мировой тур");
 
-        String [] expected = {"Тролли. Мировой тур", "Человек невидимка", "Джентльмены", "Отель Белград", "Вперёд"};
-        String[] actual = manager.ShowTheLastAddedMovie();
+        String[] expected = {"Тролли. Мировой тур", "Человек невидимка", "Джентльмены", "Отель Белград", "Вперёд"};
+        String[] actual = manager.showLastAddedMovies();
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test // Показ последних добавленных фильмов, если передаём свой лимит.
-    public void test () {
+    public void shouldShowLastAddMoviesAnotherLimit() {
         int limit = 3;
         MovieManager manager = new MovieManager(limit);
-        manager.AddNewMovie("Вперёд");
-        manager.AddNewMovie("Отель Белград");
-        manager.AddNewMovie("Джентльмены");
-        manager.AddNewMovie("Человек невидимка");
-        manager.AddNewMovie("Тролли. Мировой тур");
+        manager.addNewMovie("Вперёд");
+        manager.addNewMovie("Отель Белград");
+        manager.addNewMovie("Джентльмены");
+        manager.addNewMovie("Человек невидимка");
+        manager.addNewMovie("Тролли. Мировой тур");
 
-        String [] expected = {"Тролли. Мировой тур", "Человек невидимка", "Джентльмены"};
-        String[] actual = manager.ShowTheLastAddedMovie();
+        String[] expected = {"Тролли. Мировой тур", "Человек невидимка", "Джентльмены"};
+        String[] actual = manager.showLastAddedMovies();
         Assertions.assertArrayEquals(expected, actual);
     }
 }

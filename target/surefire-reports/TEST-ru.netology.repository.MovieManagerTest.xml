@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ru.netology.repository.MovieManagerTest" time="0.153" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ru.netology.repository.MovieManagerTest" time="0.127" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Users\Анастасия\.jdks\corretto-11.0.23\bin"/>
-    <property name="sun.java.command" value="C:\Users\08DE~1\AppData\Local\Temp\surefire14350192769729911874\surefirebooter12701722564294761132.jar C:\Users\Анастасия\AppData\Local\Temp\surefire14350192769729911874 2024-06-02T18-03-21_766-jvmRun1 surefire6262322369144088901tmp surefire_016585429375145634049tmp"/>
+    <property name="sun.java.command" value="C:\Users\08DE~1\AppData\Local\Temp\surefire1820876621742679627\surefirebooter16555477469729691470.jar C:\Users\Анастасия\AppData\Local\Temp\surefire1820876621742679627 2024-06-02T22-00-52_138-jvmRun1 surefire16551889130986498711tmp surefire_014834670345822357042tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\IdeaProjects\JAVAQA-86-Homework-Task-9-OOP-Cinema\target\test-classes;C:\IdeaProjects\JAVAQA-86-Homework-Task-9-OOP-Cinema\target\classes;C:\Users\Анастасия\.m2\repository\org\junit\jupiter\junit-jupiter\5.7.0\junit-jupiter-5.7.0.jar;C:\Users\Анастасия\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.7.0\junit-jupiter-api-5.7.0.jar;C:\Users\Анастасия\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Анастасия\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Анастасия\.m2\repository\org\junit\platform\junit-platform-commons\1.7.0\junit-platform-commons-1.7.0.jar;C:\Users\Анастасия\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.7.0\junit-jupiter-params-5.7.0.jar;C:\Users\Анастасия\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.7.0\junit-jupiter-engine-5.7.0.jar;C:\Users\Анастасия\.m2\repository\org\junit\platform\junit-platform-engine\1.7.0\junit-platform-engine-1.7.0.jar;C:\Users\Анастасия\.m2\repository\org\mockito\mockito-junit-jupiter\3.6.28\mockito-junit-jupiter-3.6.28.jar;C:\Users\Анастасия\.m2\repository\org\mockito\mockito-core\3.6.28\mockito-core-3.6.28.jar;C:\Users\Анастасия\.m2\repository\net\bytebuddy\byte-buddy\1.10.18\byte-buddy-1.10.18.jar;C:\Users\Анастасия\.m2\repository\net\bytebuddy\byte-buddy-agent\1.10.18\byte-buddy-agent-1.10.18.jar;C:\Users\Анастасия\.m2\repository\org\objenesis\objenesis\3.1\objenesis-3.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\08DE~1\AppData\Local\Temp\surefire14350192769729911874\surefirebooter12701722564294761132.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\08DE~1\AppData\Local\Temp\surefire1820876621742679627\surefirebooter16555477469729691470.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.23+9-LTS"/>
@@ -62,11 +62,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="shouldAddSeveralMovies" classname="ru.netology.repository.MovieManagerTest" time="0.078"/>
-  <testcase name="shouldShowTheLastAddMoviesIfAddedLessThanLimit" classname="ru.netology.repository.MovieManagerTest" time="0"/>
-  <testcase name="test" classname="ru.netology.repository.MovieManagerTest" time="0"/>
-  <testcase name="shouldAddNullMovies" classname="ru.netology.repository.MovieManagerTest" time="0.006"/>
-  <testcase name="shouldShowTheLastAddMoviesIfAddedMoreThanLimit" classname="ru.netology.repository.MovieManagerTest" time="0"/>
-  <testcase name="shouldAddOneMovie" classname="ru.netology.repository.MovieManagerTest" time="0.001"/>
-  <testcase name="shouldShowTheLastAddMoviesIfAddedEqualToTheLimit" classname="ru.netology.repository.MovieManagerTest" time="0.001"/>
+  <testcase name="shouldShowLastAddMoviesAddedLessLimit" classname="ru.netology.repository.MovieManagerTest" time="0.057"/>
+  <testcase name="shouldAddSeveralMovies" classname="ru.netology.repository.MovieManagerTest" time="0.029"/>
+  <testcase name="shouldShowLastAddMoviesAddedMoreLimit" classname="ru.netology.repository.MovieManagerTest" time="0"/>
+  <testcase name="shouldShowLastAddMoviesAnotherLimit" classname="ru.netology.repository.MovieManagerTest" time="0.016"/>
+  <testcase name="shouldAddNullMovies" classname="ru.netology.repository.MovieManagerTest" time="0"/>
+  <testcase name="shouldAddOneMovie" classname="ru.netology.repository.MovieManagerTest" time="0"/>
+  <testcase name="shouldShowLastAddMoviesAddedEqualLimit" classname="ru.netology.repository.MovieManagerTest" time="0"/>
 </testsuite>

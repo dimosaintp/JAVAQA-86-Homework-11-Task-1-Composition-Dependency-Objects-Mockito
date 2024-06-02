@@ -33,7 +33,7 @@ public class MovieManager {
     // Добавляем новый фильм movie в массив tmp.
     // Записываем массив movies в новый массив tmp.
 
-    public void AddNewMovie(String movie) {
+    public void addNewMovie(String movie) {
         String[] tmp = new String[movies.length + 1];
         for (int i = 0; i < movies.length; i++) {
             tmp[i] = movies[i];
@@ -43,13 +43,13 @@ public class MovieManager {
     }
 
     // Метод показа всех фильмов.
-    public String[] ShowAllMovies() {
+    public String[] showAllMovies() {
         return movies; // Возвращаем массив movies со всеми фильмами.
     }
 
     // Метод показа последних добавленных фильмов.
 
-    public String[] ShowTheLastAddedMovie() {
+    public String[] showLastAddedMovies() {
         int arrayLength; // Длина массива с лимитом.
 
         // Если фильмов добавлено меньше лимита, длина массива равна количеству фильмов.
