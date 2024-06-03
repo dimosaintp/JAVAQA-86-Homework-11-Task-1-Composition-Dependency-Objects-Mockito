@@ -43,13 +43,13 @@ public class MovieManager {
     }
 
     // Метод показа всех фильмов.
-    public String[] showAllMovies() {
+    public String[] findAll() {
         return movies; // Возвращаем массив movies со всеми фильмами.
     }
 
     // Метод показа последних добавленных фильмов.
 
-    public String[] showLastAddedMovies() {
+    public String[] findLast() {
         int arrayLength; // Длина массива с лимитом.
 
         // Если фильмов добавлено меньше лимита, длина массива равна количеству фильмов.

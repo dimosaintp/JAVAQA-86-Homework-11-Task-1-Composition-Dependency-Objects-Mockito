@@ -10,7 +10,7 @@ public class MovieManagerTest {
     public void shouldAddNullMovies() {
 
         String[] expected = {};
-        String[] actual = manager.showAllMovies();
+        String[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -19,7 +19,7 @@ public class MovieManagerTest {
         manager.addNewMovie("Бладшот");
 
         String[] expected = {"Бладшот"};
-        String[] actual = manager.showAllMovies();
+        String[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -33,7 +33,7 @@ public class MovieManagerTest {
         manager.addNewMovie("Тролли. Мировой тур");
 
         String[] expected = {"Вперёд", "Отель Белград", "Джентльмены", "Человек невидимка", "Тролли. Мировой тур"};
-        String[] actual = manager.showAllMovies();
+        String[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -47,7 +47,7 @@ public class MovieManagerTest {
         manager.addNewMovie("Номер один");
 
         String[] expected = {"Номер один", "Тролли. Мировой тур", "Человек невидимка", "Джентльмены", "Отель Белград"};
-        String[] actual = manager.showLastAddedMovies();
+        String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -57,7 +57,7 @@ public class MovieManagerTest {
         manager.addNewMovie("Человек невидимка");
 
         String[] expected = {"Человек невидимка"};
-        String[] actual = manager.showLastAddedMovies();
+        String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -71,7 +71,7 @@ public class MovieManagerTest {
         manager.addNewMovie("Тролли. Мировой тур");
 
         String[] expected = {"Тролли. Мировой тур", "Человек невидимка", "Джентльмены", "Отель Белград", "Вперёд"};
-        String[] actual = manager.showLastAddedMovies();
+        String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -86,7 +86,7 @@ public class MovieManagerTest {
         manager.addNewMovie("Тролли. Мировой тур");
 
         String[] expected = {"Тролли. Мировой тур", "Человек невидимка", "Джентльмены"};
-        String[] actual = manager.showLastAddedMovies();
+        String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 }
